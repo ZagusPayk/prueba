@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="estilos.css">
+    <script defer src="./index.js"></script>
 </head>
 <body>
     <header>
@@ -23,7 +24,7 @@
 
         <div class="img-container"></div>
         <h2>Somos el Taller "CHAVY"</h2>
-        <P>Un taller de primera, el cual lleva mas de 30 años existiendo. utilizando los mejores materiales y especializandose en todo tipo de vehiculos, desde clasicos hasta los mas actuales</P>    
+        <P>Un taller de primera, el cual lleva más de 30 años existiendo. utilizando los mejores materiales y especializándose en todo tipo de vehículos, desde clásicos hasta los más actuales</P>    
         </div>
     </section>
 
@@ -68,6 +69,32 @@
         </div>
     </section>
 
+    <section id="formulario"></section>
+        <div class="container">
+        <form id="form" action="" method="post"> 
+            <h1>Aquí puede realizar un formulario para que lo asesoremos</h1>
+            <div class="input-control">
+                <label for="nombre y apellido">Nombres Y Apellidos</label>
+                <input id="nombres" name="nombres" type="text" required>
+            </div>
+            <div class="input-control">
+                <label for="email">Correo electronico</label>
+                <input id="email" name="nombres" type="text" required>
+            </div>
+            <div class="input-control">
+                <label for="mensaje">Especifique marca y modelo de su vehiculo</label>
+                <input id="marca" name="nombres" type="text" required>
+            </div>
+            <div class="input-control">
+                <label for="mensaje2">Que servicio le gustaria solicitar</label>
+                <input id="service" name="nombres" type="text" required>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+        </div>
+        
+
+
     <section id="contactos">
         <a href="contactos-link">Telefono: 011-5617-1417 (CABA)</a>
         <a href="contactos-link">Direccion: Belaustegui 4600 (Monte Castro)</a>
@@ -78,6 +105,19 @@
             <p>&copy;taller 2021</p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('form').addEventListener('submit', function(event) {
+            
+            // Muestra un mensaje de alerta
+            alert('El formulario ha sido enviado exitosamente.');
+            // Redirige a la misma página después de un breve retraso
+            setTimeout(function() {
+                window.location.href = window.location.href;
+            }, 1); // Ajusta el retraso según sea necesario
+        });
+    </script>
+
 </body>
 </html>
 
