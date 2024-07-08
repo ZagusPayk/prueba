@@ -176,8 +176,15 @@ h3{
     padding: 150px 12px;
 }
 
-#nuestros-servicios p{
+
+ 
+
+.hideText {
     display: none;
+}
+
+.show {
+    display: block;
 }
 
 #nuestros-servicios h2{
@@ -270,4 +277,38 @@ h3{
     color: red;
     font-size: 9px;
     height: 13px;
+}
+
+#hiden {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Estilo del menú */
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 600px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .menu {
+        display: none;
+        flex-direction: column;
+    }
+
+    .menu.active {
+        display: flex;
+    }
 }

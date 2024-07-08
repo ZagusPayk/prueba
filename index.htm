@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="estilos.css">
-    <script defer src="./index.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -13,10 +13,13 @@
             <img src="aaaaa.png" alt="logo">
             <h2 class="nombre">Taller de CHAVY</h2>
         </div>
-        <nav>
-            <a href="#quienes-somos" class="nav-link">Quienes somos</a>
-            <a href="#caracteristicas" class="nav-link">Porque elegirnos</a>
-            <a href="#contactos" class="nav-link">Contactos</a>
+        <nav class="nav">
+            <button class="menu-toggle" id="menu-toggle">Desplegar</button>
+            <ul class="menu" id="menu">
+                <li><a href="#quienes-somos" class="nav-link">Quienes somos</a></li>
+                <li><a href="#caracteristicas" class="nav-link">Porque elegirnos</a></li>
+                <li><a href="#contactos" class="nav-link">Contactos</a></li>
+            </ul>
         </nav>
     </header>
     <section id="quienes-somos">
@@ -34,18 +37,19 @@
             <div class="servicios">
                 <div class="carta">
                     <h3>Pintura vehiculo completo</h3>
-                    <p>Pintura a todo el vehiculo del color que elijas!!!</p>
-                    <button>+ Info</button>
+                    <p id="p1" class="hideText">Pintura a todo el vehiculo del color que elijas!!!</p>
+                    <button class="boton" data-target="p1">+ Info</button>
                 </div>
                 <div class="carta">
                     <h3>Customizacion de llantas</h3>
-                    <p>Cambio, ya sea de diseño o color de los rines de tu vehiculo</p>
-                    <button>+ Info</button>
+                    <p id="p2" class="hideText">Llantas a elección de acero templado con la opción de pintarlas del color que guste</p>
+                    <button class="boton" data-target="p2">+ Info</button>
                 </div>
                 <div class="carta">
                     <h3>Instalacion luces neon</h3>
-                    <p>Luces LED o Neon que se instalan ya sea dentro del vehiculo o por fuera las cuales pueden ser de distintos colores a eleccion</p>
-                    <button>+ Info</button>
+                    <p id="p3" class="hideText">Luces led de excelente calidad con distintos diseños y colores
+                    </p>
+                    <button class="boton" data-target="p3">+ Info</button>
                 </div>
             </div>
         </div>
@@ -106,18 +110,18 @@
         </div>
     </footer>
 
+
+   
+
     <script>
-        document.getElementById('form').addEventListener('submit', function(event) {
-            
-            // Muestra un mensaje de alerta
-            alert('El formulario ha sido enviado exitosamente.');
-            // Redirige a la misma página después de un breve retraso
-            setTimeout(function() {
-                window.location.href = window.location.href;
-            }, 1); // Ajusta el retraso según sea necesario
+        document.querySelectorAll('.boton').forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-target');
+                const paragraph = document.getElementById(targetId);
+                paragraph.classList.toggle('hideText');
+            });
         });
     </script>
-
 </body>
 </html>
 
